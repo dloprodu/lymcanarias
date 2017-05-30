@@ -9,73 +9,73 @@ $(document).ready(function($) {
 	/*-------------------------------------------------*/
 	/* =  portfolio isotope
 	/*-------------------------------------------------*/
-
+    /*
 	var winDow = $(window);
-		// Needed variables
-		var $container=$('.portfolio-container');
-		var $filter=$('.filter');
+	// Needed variables
+	var $container=$('.portfolio-container');
+	var $filter=$('.filter');
 
-		try{
-			$container.imagesLoaded( function(){
-				$container.show();
-				$container.isotope({
-					filter:'*',
-					layoutMode:'masonry',
-					animationOptions:{
-						duration:750,
-						easing:'linear'
-					}
-				});
+	try{
+		$container.imagesLoaded( function(){
+			$container.show();
+			$container.isotope({
+				filter:'*',
+				layoutMode:'masonry',
+				animationOptions:{
+					duration:750,
+					easing:'linear'
+				}
+			});
+		});
+	} catch(err) {
+	}
+
+	winDow.bind('resize', function(){
+		var selector = $filter.find('a.active').attr('data-filter');
+
+		try {
+			$container.isotope({ 
+				filter	: selector,
+				animationOptions: {
+					duration: 750,
+					easing	: 'linear',
+					queue	: false,
+				}
 			});
 		} catch(err) {
 		}
-
-		winDow.bind('resize', function(){
-			var selector = $filter.find('a.active').attr('data-filter');
-
-			try {
-				$container.isotope({ 
-					filter	: selector,
-					animationOptions: {
-						duration: 750,
-						easing	: 'linear',
-						queue	: false,
-					}
-				});
-			} catch(err) {
-			}
-			return false;
-		});
+		return false;
+	});
 		
-		// Isotope Filter 
-		$filter.find('a').click(function(){
-			var selector = $(this).attr('data-filter');
+	// Isotope Filter 
+	$filter.find('a').click(function(){
+		var selector = $(this).attr('data-filter');
 
-			try {
-				$container.isotope({ 
-					filter	: selector,
-					animationOptions: {
-						duration: 750,
-						easing	: 'linear',
-						queue	: false,
-					}
-				});
-			} catch(err) {
+		try {
+			$container.isotope({ 
+				filter	: selector,
+				animationOptions: {
+					duration: 750,
+					easing	: 'linear',
+					queue	: false,
+				}
+			});
+		} catch(err) {
 
-			}
-			return false;
-		});
-
+		}
+		return false;
+	});
 
 	var filterItemA	= $('.filter li a');
 
-		filterItemA.on('click', function(){
-			var $this = $(this);
-			if ( !$this.hasClass('active')) {
-				filterItemA.removeClass('active');
-				$this.addClass('active');
-			}
-		});
+	filterItemA.on('click', function(){
+		var $this = $(this);
+		if ( !$this.hasClass('active')) {
+			filterItemA.removeClass('active');
+			$this.addClass('active');
+		}
+	});
+    */
 
 	/*-------------------------------------------------*/
 	/* =  smooth scroll in chrome
@@ -105,6 +105,7 @@ $(document).ready(function($) {
 	/*-------------------------------------------------*/
 	/* =  flexslider
 	/*-------------------------------------------------*/
+    /*
 	try {
 
 		var SliderPost = $('.flexslider');
@@ -116,11 +117,12 @@ $(document).ready(function($) {
 	} catch(err) {
 
 	}
+    */
 
 	/* ---------------------------------------------------------------------- */
 	/*	Contact Map
 	/* ---------------------------------------------------------------------- */
-	var contact = {"lat":"51.51152", "lon":"-0.104198"}; //Change a map coordinate here!
+    var contact = { "lat": "28.482961", "lon":"-16.314543"};
 
 	try {
 		var mapContainer = $('.map');
@@ -129,7 +131,7 @@ $(document).ready(function($) {
 			latLng: [contact.lat, contact.lon],
 			map:{
 				center: [contact.lat, contact.lon],
-				zoom: 14
+				zoom: 12
 				},
 			},
 			{action: 'setOptions', args:[{scrollwheel:false}]}
@@ -219,7 +221,7 @@ $(document).ready(function($) {
 	/*-------------------------------------------------*/
 	/* = slider Testimonial
 	/*-------------------------------------------------*/
-
+    /*
 	var slidertestimonial = $('.bxslider');
 	try{		
 		slidertestimonial.bxSlider({
@@ -227,6 +229,7 @@ $(document).ready(function($) {
 		});
 	} catch(err) {
 	}
+    */
 
 	/*-------------------------------------------------*/
 	/* = skills animate
