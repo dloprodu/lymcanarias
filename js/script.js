@@ -326,7 +326,7 @@ $(document).ready(function($) {
 		
 		$.ajax({
 			type: "POST",
-			url: 'contact.php',
+			url: 'contact.ashx',
 			dataType: 'json',
 			cache: false,
 			data: $('#contact-form').serialize(),
