@@ -10,6 +10,7 @@ public class contact : IHttpHandler {
         context.Response.ContentType = "application/json; charset=utf-8";
 
         string name = context.Request.Form["name"];
+        string phone = context.Request.Form["phone"];
         string from = context.Request.Form["mail"];
         string coment = context.Request.Form["comment"];
 
@@ -33,7 +34,6 @@ public class contact : IHttpHandler {
 
         try
         {
-
             SmtpClient smtpClient = new SmtpClient
             {
                 Host = "smtp.gmail.com",
@@ -42,7 +42,7 @@ public class contact : IHttpHandler {
                 Timeout = 10000,
                 DeliveryMethod = SmtpDeliveryMethod.Network,
                 UseDefaultCredentials = false,
-                Credentials = new System.Net.NetworkCredential("lymcanarias@gmail.com", "xxx")
+                Credentials = new System.Net.NetworkCredential("lymcanarias@gmail.com", "empresa2017")
             };
 
             MailMessage mail = new MailMessage();
@@ -51,9 +51,9 @@ public class contact : IHttpHandler {
             //Setting From , To and CC
             mail.From = new MailAddress(from, name);
             mail.To.Add(new MailAddress("lymcanarias@gmail.com"));
-            mail.CC.Add(new MailAddress("dloprodu@gmail.com"));
-
-            mail.Body = GetMailContent(name, from, "Lyncanarias WEB", coment);
+            //mail.CC.Add(new MailAddress("dloprodu@gmail.com"));
+            mail.Subject = "LYM Canarias WEB: " + name;
+            mail.Body = GetMailContent(name, from, phone, "LYM Canarias Web", coment);
 
             smtpClient.Send(mail);
 
@@ -81,7 +81,7 @@ public class contact : IHttpHandler {
         }
     }
 
-    public string GetMailContent(string name, string mail, string subject, string coment)
+    public string GetMailContent(string name, string mail, string phone, string subject, string coment)
     {
         return @"
 		<html>
@@ -97,6 +97,10 @@ public class contact : IHttpHandler {
 			<tr style=""height: 32px;"">
 				<th align=""right"" style=""width:150px; padding-right:5px;"">E-mail:</th>
 				<td align=""left"" style=""padding-left:5px; line-height: 20px;"">" + mail + @"</td>
+			</tr>
+			<tr style=""height: 32px;"">
+				<th align=""right"" style=""width:150px; padding-right:5px;"">Teléfono:</th>
+				<td align=""left"" style=""padding-left:5px; line-height: 20px;"">" + phone + @"</td>
 			</tr>
 			<tr style=""height: 32px;"">
 				<th align=""right"" style=""width:150px; padding-right:5px;"">Tema:</th>
