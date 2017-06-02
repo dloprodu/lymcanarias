@@ -330,7 +330,7 @@ h5 {
 }
 
 p {
-    color: #9a9a9a;
+    color: #666;
     font-size: 13px;
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;
@@ -1058,7 +1058,7 @@ ul.pricing-table li a:hover {
 
 .skills-progress p span {
     display: inline-block;
-    color: #9a9a9a;
+    color: #666;
     float: right;
     font-weight: 400;
 }
@@ -2172,7 +2172,7 @@ ul.contact-information-list li {
 
 ul.contact-information-list li span {
     display: inline-block;
-    color: #9a9a9a;
+    color: #666;
     font-size: 14px;
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;
@@ -2181,7 +2181,7 @@ ul.contact-information-list li span {
 
 ul.contact-information-list li a {
     display: inline-block;
-    color: #9a9a9a;
+    color: #666;
     font-size: 14px;
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;
