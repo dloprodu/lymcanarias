@@ -10,6 +10,7 @@ $(document).ready(function($) {
 	/* =  portfolio isotope
 	/*-------------------------------------------------*/
     /*
+    */
 	var winDow = $(window);
 	// Needed variables
 	var $container=$('.portfolio-container');
@@ -75,7 +76,6 @@ $(document).ready(function($) {
 			$this.addClass('active');
 		}
 	});
-    */
 
 	/*-------------------------------------------------*/
 	/* =  smooth scroll in chrome
